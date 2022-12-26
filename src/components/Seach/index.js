@@ -14,7 +14,7 @@ const Search = () => {
     console.log("target", target.value);
     setCity(target.value);
   }
-
+  console.log("data", data);
   useEffect(() => {
     async function dataFetch() {
       try {
@@ -29,9 +29,9 @@ const Search = () => {
   }, [debounce]);
 
   return (
-    <div>
-      <input type="text" onChange={handleChange} />
-    </div>
+    <S.InputWrapper>
+      <S.Input type="text" onChange={handleChange} />
+    </S.InputWrapper>
   );
 };
 
