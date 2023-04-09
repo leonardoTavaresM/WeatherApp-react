@@ -1,0 +1,40 @@
+.infoBox {
+  width: 600px;
+  height: 190px;
+  background: rgba(26, 26, 26, 0.7);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.info {
+  color: white;
+  font-size: 18px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 12px;
+}
+
+.wrapperInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
+.temp {
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+}

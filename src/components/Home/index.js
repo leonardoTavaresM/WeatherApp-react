@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LOCATION_GET } from "../../api";
+import { WeatherContext } from "../../DataContext";
 import useFetch from "../../Hooks/useFetch";
-import Input from "../Forms/Input";
+import WeatherInfo from "../WeatherInfo";
+import Search from "../Search";
+import styles from "./Home.module.css";
 import { useDebounce } from "../utils/functions";
 
 const Home = () => {
   const { request, data, loading, error } = useFetch();
 
-  // const [data, setData] = useState({});
-  const [city, setCity] = useState("Turin");
+  const [city, setCity] = useState("");
   const debounce = useDebounce(city);
-
+  const { setCitySelected } = useContext(WeatherContext);
   function handleChange({ target }) {
     console.log("target", target.value);
     setCity(target.value);
@@ -21,16 +23,16 @@ const Home = () => {
     request(url, options);
   }, [debounce, request]);
 
+  useEffect(() => {
+    if (data?.length > 0) setCitySelected(debounce);
+  }, [data, setCitySelected, debounce]);
+
   console.log("dataaaaa", data);
 
   return (
-    <div>
-      <Input
-        type="text"
-        placeholder="City"
-        onChange={handleChange}
-        value={city}
-      />
+    <div className={styles.home}>
+      <Search handleChange={handleChange} city={city} />
+      <WeatherInfo data={data} />
     </div>
   );
 };

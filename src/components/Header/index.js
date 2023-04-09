@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <nav>
+      <nav className={styles.nav}>
         <Link to="/">Weather App</Link>
       </nav>
     </header>

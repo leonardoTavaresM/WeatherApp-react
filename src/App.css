@@ -5,10 +5,11 @@
 }
 
 body {
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   margin: 0px;
   color: #333;
-  --type-first: Helvetica, Arial, sans-serif;
+  /* --type-first: Helvetica, Arial, sans-serif; */
+  --type-first: Inter, Arial, sans-serif;
   --type-second: "Spectral", georgia;
   font-family: var(--type-first);
 }
@@ -44,11 +45,16 @@ a {
 .App {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh + 10rem);
+  /* min-height: calc(100vh + 10rem); */
+  min-height: 100vh;
 }
 
 .container {
   max-width: 60rem;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.AppBody {
+  /* margin-top: 4rem; */
 }
